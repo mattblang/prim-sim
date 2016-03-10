@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<object data="Blank_US_Map.svg" type="image/svg+xml" id="map"></object>
+
+<script type="text/javascript">
+    window.onload=function() {
+        var map = document.getElementById("map");
+        var svgDoc = map.contentDocument;
+        var states = svgDoc.getElementsByClassName('state');
+
+        for(var i = 0; i < states.length; i++) {
+            states[i].addEventListener('click', function() {
+                this.style.fill = "red";
+            });
+        }
+    };
+</script>
+</body>
+</html>
